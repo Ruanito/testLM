@@ -19,12 +19,6 @@ class MacbethAnalyser
 			node.content.lines.each do |line|
 			end
 		end
-
-		@xml.xpath("//SPEAKER").each do |node|
-			@speakers[node.content] = @speakers[node.content].nil? ? 0 : @speakers[node.content] + 1
-		end
-
-
 	end
 
 	def print_line
@@ -43,3 +37,7 @@ class MacbethAnalyser
 		SOURCE_LOCATION
 	end
 end
+
+mac = MacbethAnalyser.new
+mac.xml_parse
+mac.print_line
