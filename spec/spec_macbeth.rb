@@ -9,7 +9,7 @@ RSpec.describe MacbethAnalyser, "Read File" do
 		end
 	end
 
-	context "Speakers"
+	context "Speakers" do
 		it "Hash new" do
 			macbeth = MacbethAnalyser.new('macbeth.xml')
 			expect(macbeth.speakers).to eq Hash.new
