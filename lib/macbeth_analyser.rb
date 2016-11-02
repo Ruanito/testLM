@@ -4,7 +4,8 @@ require 'nokogiri'
 class MacbethAnalyser
 	SOURCE_LOCATION = "http://www.ibiblio.org/xml/examples/shakespeare/macbeth.xml"
 
-	def initialize
+	def initialize(source)
+		file_source = source.nil? ? source : SOURCE_LOCATION
 		@xml = Nokogiri::XML(open(SOURCE_LOCATION)) do |config|
 		  config.strict.nonet
 		end
@@ -38,6 +39,6 @@ class MacbethAnalyser
 	end
 end
 
-mac = MacbethAnalyser.new
+mac = MacbethAnalyser.new(nil)
 mac.xml_parse
 mac.print_line
