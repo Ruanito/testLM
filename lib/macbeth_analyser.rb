@@ -16,6 +16,7 @@ class MacbethAnalyser
 	def xml_parse
 		@xml.xpath("//SPEECH").each do |node|
 			split_string = node.content.split("\n")
+			#First line is blank e second is the title
 			@speakers[split_string[1]] = @speakers[split_string[1]].nil? ? split_string.length - 2 : @speakers[split_string[1]] + split_string.length - 2
 			node.content.lines.each do |line|
 			end
