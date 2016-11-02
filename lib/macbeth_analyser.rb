@@ -1,11 +1,13 @@
-require 'nokogiri'
+require 'open-uri'
 
 class MacbethAnalyser
-
-	XML_SOURCE = 'http://www.ibiblio.org/xml/examples/shakespeare/macbeth.xml'
+	SOURCE_LOCATION = "http://www.ibiblio.org/xml/examples/shakespeare/macbeth.xml"
 
 	def initialize
-		file = File.read(open(XML_SOURCE))
+		@source = File.read(open(SOURCE_LOCATION))
 	end
 
+	def source_location
+		SOURCE_LOCATION
+	end
 end
