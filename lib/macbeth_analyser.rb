@@ -26,7 +26,7 @@ class MacbethAnalyser
 	def print_line
 		@speakers.each do |key, value|
 			if key != "ALL"
-				puts "#{value} #{key}"
+				puts "#{value} #{key.capitalize}"
 			end
 		end
 	end
@@ -39,7 +39,3 @@ class MacbethAnalyser
 		SOURCE_LOCATION
 	end
 end
-
-mac = MacbethAnalyser.new(nil)
-mac.xml_parse
-mac.print_line
